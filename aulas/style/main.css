@@ -1,0 +1,239 @@
+:root{
+    --vermelho:#e50914;
+    --preto:#141414;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Netflix Sans Black';
+    src: url('/fonts/netflix-sans-cufonfonts/NetflixSansBlack.ttf')format('opentype');
+    font-family: 'Netflix Sans Bold';
+    src: url('/fonts/netflix-sans-cufonfonts/NetflixSansBold.ttf')format('opentype');
+    font-family: 'Netflix Sans Icon';
+    src: url('/fonts/netflix-sans-cufonfonts/NetflixSansIcon.ttf')format('opentype');
+    font-family: 'Netflix Sans Thin';
+    src: url('/fonts/netflix-sans-cufonfonts/NetflixSansThin.ttf')format('opentype');
+}
+
+/*Elementos base*/
+
+body{
+    background-color: var(--preto);
+    font-family: 'Netflix Sans Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+header .container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Netflix Sans Icon', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+header nav a:hover{
+    color: #aaa;
+}
+
+/*Filme principal*/
+
+.filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50), rgba(0,0,0,.50)100%), url("/img/capa-euphoria.jpg");
+
+    height: 400px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.filme-principal .descricao{
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.filme-principal .titulo{
+    margin-top: 15%;
+    font-size: 40px;
+    font-family: "Netflix Sans Black", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.filme-principal .botoes .botao{
+    background-color: rgba(0, 0, 0, 50%);
+    border: none;
+    color: white;
+
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: bold;
+
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*Botões*/
+
+.botoes .botao:hover{
+    transition: .4s ease all;
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 8px;
+}
+
+.assistir-filme{
+    text-decoration: none;
+    color: white;
+}
+
+/*Mais informações*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    font-family: 'Netflix Sans Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+
+.modal:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal > div {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    border-radius: 8px;
+    background: rgb(25, 25, 25);
+}
+
+.fechar {
+	background: rgb(25, 25, 25);
+	color: white;
+	line-height: 25px;
+	position: absolute;
+	right: 11px;
+	text-align: center;
+	top: 8px;
+	width: 24px;
+	text-decoration: none;
+    font-family: 'Netflix Sans Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.box-modal .nome{
+    margin-bottom: 30px;
+}
+
+.box-modal .detalhes{
+    margin-bottom: 20px;
+    font-family: 'Netflix Sans Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+.relevancia{
+    color: green;
+    margin-right: 5px;
+}
+
+.ano{
+    margin-right: 5px;
+}
+
+.classificacao{
+    border: var(--vermelho) 2px solid;
+    padding: 3px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.duracao{
+    margin-right: 5px;
+}
+
+.qualidade{
+    border: white 1px solid;
+    padding: 1px 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.box-modal p{
+    text-align: justify;
+}
+
+.sobre{
+    font-family: 'Netflix Sans Bold', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #aaa;
+}
+
+.sobre > div{
+    margin-bottom: 5px;
+}
+
+.sobre > div span{
+    font-weight: bold;
+    color: white;
+}
+
+.container{
+    margin-left: 20px;
+}
+
+.filme-principal .container{
+    width: 70%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrossel-filmes{
+    margin-top: 5px;
+}
